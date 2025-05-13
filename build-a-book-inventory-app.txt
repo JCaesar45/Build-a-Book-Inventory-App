@@ -1,0 +1,134 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Inventory</title>
+  <style>
+    /* Backgrounds for rows */
+    tr[class="read"] {
+      background-image: linear-gradient(to right, #d0f0c0, #a0d995);
+    }
+    tr[class="to-read"] {
+      background-image: linear-gradient(to right, #f0e68c, #f5deb3);
+    }
+    tr[class="in-progress"] {
+      background-image: linear-gradient(to right, #add8e6, #87ceeb);
+    }
+
+    /* Display each span as inline-block */
+    span {
+      display: inline-block;
+    }
+
+    /* Attribute selector for status in to-read */
+    tr[class="to-read"] span[class="status"] {
+      border: 1px solid #ccc;
+      background-image: linear-gradient(to bottom, #fffacd, #eee8aa);
+    }
+
+    /* Attribute selector for status in read */
+    tr[class="read"] span[class="status"] {
+      border: 1px solid #4CAF50;
+      background-image: linear-gradient(to bottom, #98fb98, #90ee90);
+    }
+
+    /* Attribute selector for status in in-progress */
+    tr[class="in-progress"] span[class="status"] {
+      border: 1px solid #1e90ff;
+      background-image: linear-gradient(to bottom, #add8e6, #87ceeb);
+    }
+
+    /* General style for status and rate spans */
+    span[class="status"],
+    span[class^="rate"] {
+      height: 25px;
+      width: 100px;
+      padding: 5px;
+    }
+
+    /* Inner spans inside rate */
+    span[class^="rate"] > span {
+      border: 1px solid #000;
+      border-radius: 50%;
+      margin: 2px;
+      height: 15px;
+      width: 15px;
+      background-color: #ccc;
+      display: inline-block;
+    }
+
+    /* Rate color fill: one */
+    span[class~="one"] > span:first-child {
+      background-image: linear-gradient(to bottom, gold, orange);
+    }
+
+    /* Rate color fill: two */
+    span[class~="two"] > span:nth-child(-n+2) {
+      background-image: linear-gradient(to bottom, gold, orange);
+    }
+
+    /* Rate color fill: three */
+    span[class~="three"] > span {
+      background-image: linear-gradient(to bottom, gold, orange);
+    }
+  </style>
+</head>
+<body>
+  <h1>Book Inventory</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="read">
+        <td>The Hobbit</td>
+        <td>J.R.R. Tolkien</td>
+        <td>Fantasy</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate one"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="to-read">
+        <td>Atomic Habits</td>
+        <td>James Clear</td>
+        <td>Self-help</td>
+        <td><span class="status">To Read</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="in-progress">
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>Dystopian</td>
+        <td><span class="status">In Progress</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="read">
+        <td>The Alchemist</td>
+        <td>Paulo Coelho</td>
+        <td>Fiction</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate three"><span></span><span></span><span></span></span></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+
+** end of index.html **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+
